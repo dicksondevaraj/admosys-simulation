@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMOSYS V7: Indian EV Suspension Analysis</title>
@@ -1130,6 +1131,7 @@ body {
         .visualization-3d-wrapper {
             min-height: 500px;
         }
+        
     </style>
 </head>
 <body>
@@ -1677,58 +1679,58 @@ body {
         </div>
 
         <!-- Metrics Grid -->
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-label">Current Torque</div>
-                <div class="metric-value" id="metricTorque">100<span class="metric-unit">Nm</span></div>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="dashboard-label">Current Torque</div>
+                <div class="dashboard-value" id="metricTorque">100<span class="dashboard-unit">Nm</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Current Vibration</div>
-                <div class="metric-value" id="metricVibration">1.0<span class="metric-unit">g</span></div>
+            <div class="dashboard-card">
+                <div class="dashboard-label">Current Vibration</div>
+                <div class="dashboard-value" id="metricVibration">1.0<span class="dashboard-unit">g</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Motor Temperature</div>
-                <div class="metric-value" id="metricTemperature">40<span class="metric-unit">°C</span></div>
-                <div class="status-indicator status-ok" id="tempStatus">Normal</div>
+            <div class="dashboard-card">
+                <div class="dashboard-label">Motor Temperature</div>
+                <div class="dashboard-value" id="metricTemperature">40<span class="dashboard-unit">°C</span></div>
+                <div class="dashboard-status-indicator dashboard-status-ok" id="tempStatus">Normal</div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Wheel Speed</div>
-                <div class="metric-value" id="metricWheelSpeed">500<span class="metric-unit">RPM</span></div>
+            <div class="dashboard-card">
+                <div class="dashboard-label">Wheel Speed</div>
+                <div class="dashboard-value" id="metricWheelSpeed">500<span class="dashboard-unit">RPM</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">FL Compression</div>
-                <div class="metric-value" id="metricCompressionFL">12<span class="metric-unit">%</span></div>
+            <div class="dashboard-card dashboard-compression-card">
+                <div class="dashboard-label">FL Compression</div>
+                <div class="dashboard-value" id="metricCompressionFL">12<span class="dashboard-unit">%</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">FR Compression</div>
-                <div class="metric-value" id="metricCompressionFR">12<span class="metric-unit">%</span></div>
+            <div class="dashboard-card dashboard-compression-card">
+                <div class="dashboard-label">FR Compression</div>
+                <div class="dashboard-value" id="metricCompressionFR">12<span class="dashboard-unit">%</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">BL Compression</div>
-                <div class="metric-value" id="metricCompressionBL">15<span class="metric-unit">%</span></div>
+            <div class="dashboard-card dashboard-compression-card">
+                <div class="dashboard-label">BL Compression</div>
+                <div class="dashboard-value" id="metricCompressionBL">15<span class="dashboard-unit">%</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">BR Compression</div>
-                <div class="metric-value" id="metricCompressionBR">15<span class="metric-unit">%</span></div>
+            <div class="dashboard-card dashboard-compression-card">
+                <div class="dashboard-label">BR Compression</div>
+                <div class="dashboard-value" id="metricCompressionBR">15<span class="dashboard-unit">%</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Chassis Pitch Angle</div>
-                <div class="metric-value" style="color: #00FF41;">0.0<span class="metric-unit">°</span></div>
-                <div class="status-indicator status-ok">LEVEL</div>
+            <div class="dashboard-card dashboard-angle-card">
+                <div class="dashboard-label">Chassis Pitch Angle</div>
+                <div class="dashboard-value dashboard-level-ok" style="color: #00FF41;">0.0<span class="dashboard-unit">°</span></div>
+                <div class="dashboard-status-indicator dashboard-status-ok">LEVEL</div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Chassis Roll Angle</div>
-                <div class="metric-value" style="color: #00FF41;">0.0<span class="metric-unit">°</span></div>
-                <div class="status-indicator status-ok">LEVEL</div>
+            <div class="dashboard-card dashboard-angle-card">
+                <div class="dashboard-label">Chassis Roll Angle</div>
+                <div class="dashboard-value dashboard-level-ok" style="color: #00FF41;">0.0<span class="dashboard-unit">°</span></div>
+                <div class="dashboard-status-indicator dashboard-status-ok">LEVEL</div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">Suspension Efficiency</div>
-                <div class="metric-value" id="metricEfficiency">92<span class="metric-unit">%</span></div>
+            <div class="dashboard-card">
+                <div class="dashboard-label">Suspension Efficiency</div>
+                <div class="dashboard-value" id="metricEfficiency">92<span class="dashboard-unit">%</span></div>
             </div>
-            <div class="metric-card">
-                <div class="metric-label">System Status</div>
-                <div class="metric-value" style="font-size: var(--font-size-xl);">OK</div>
-                <div class="status-indicator status-ok" id="systemStatus">Operating Normally</div>
+            <div class="dashboard-card **dashboard-full-width-card**">
+                <div class="dashboard-label">System Status</div>
+                <div class="dashboard-value **dashboard-status-big-ok**" id="systemStatusMain">OK</div>
+                <div class="dashboard-status-indicator dashboard-status-ok" id="systemStatus">Operating Normally</div>
             </div>
         </div>
 

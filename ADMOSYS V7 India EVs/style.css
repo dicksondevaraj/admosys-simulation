@@ -1,0 +1,118 @@
+:root {
+    /* Define some design variables for easy changes */
+    --card-background: #1e1e2f; 
+    --grid-gap: 15px;
+    --border-radius: 12px;
+    --text-color-main: #ffffff;
+    --text-color-label: #a0a0b0;
+    --value-color: #00ff99; 
+    --status-ok-color: #00FF41; 
+    --status-bg-ok: rgba(0, 255, 65, 0.1);
+    --shadow-effect: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- GRID CONTAINER STYLES --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--grid-gap);
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+/* --- INDIVIDUAL METRIC WIDGET STYLES --- */
+.dashboard-card {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-effect);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Make the System Status card span across two columns */
+.dashboard-full-width-card {
+    grid-column: span 2;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40); 
+}
+
+/* --- TEXT AND VALUE STYLES --- */
+.dashboard-label {
+    font-size: 0.9rem;
+    color: var(--text-color-label);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.dashboard-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--value-color); 
+    line-height: 1;
+}
+
+.dashboard-unit {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--text-color-label);
+    margin-left: 5px;
+}
+
+/* Style for the big OK status */
+.dashboard-status-big-ok {
+    font-size: 4rem; 
+    color: var(--status-ok-color);
+    margin: 10px 0;
+}
+
+/* --- STATUS INDICATOR STYLES --- */
+.dashboard-status-indicator {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-top: 10px;
+    align-self: flex-start; 
+    font-weight: bold;
+}
+
+.dashboard-status-ok {
+    background-color: var(--status-bg-ok);
+    color: var(--status-ok-color);
+    border: 1px solid var(--status-ok-color);
+}
+
+/* Style for Pitch/Roll status when it is green (LEVEL) */
+.dashboard-angle-card .dashboard-status-indicator {
+    align-self: center; 
+}
+
+/* Media Query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr; 
+    }
+    .dashboard-full-width-card {
+        grid-column: span 2; 
+    }
+    .dashboard-value {
+        font-size: 1.8rem;
+    }
+    .dashboard-status-big-ok {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 500px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; 
+    }
+}
